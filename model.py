@@ -12,6 +12,6 @@ class RenameModel:
             print(filename)
 
 
-if __name__ == "__main__":
-    re = RenameModel()
-    re.change_name('/TD/show/goguma/sequences/S010/S010_0010/cmp/dev/v001/nuke', 'TTT', 'AAA')
+# if __name__ == "__main__":
+#     re = RenameModel()
+#     re.change_name('<path>', '<old_name>', '<new_name>')

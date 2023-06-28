@@ -1,27 +1,30 @@
 import sys
 from PySide2.QtWidgets import *
 
-from view import Widget
+from view import RenameView
 from model import RenameModel
 
 
-class RenameController(Widget):
+class RenameController(RenameView):
     def __init__(self):
         super().__init__()
         self.model = RenameModel()
 
         # button clicked event
         self.btn_browse.clicked.connect(self.btn_browse_clicked)
-        # self.btn_rename.clicked.connect(self.btn_rename_clicked)
+        self.btn_rename.clicked.connect(self.btn_rename_clicked)
 
     def btn_browse_clicked(self):
         dialog = QFileDialog()
-        dialog.setDirectory('/TD/show')
-        dir_path = dialog.getExistingDirectory()
-        self.line_path.setText(dir_path)
+        dialog.setDirectory('<path>')
+        self.dir_path = dialog.getExistingDirectory()
+        self.line_path.setText(self.dir_path)
 
-    # def btn_rename_clicked(self):
-    #     self.model.change_name(path=None, old_name=None, new_name=None)
+    def btn_rename_clicked(self):
+        for i in range(self.row_counter):
+            old_name = self.old_list[i].text()
+            new_name = self.new_list[i].text()
+            self.model.change_name(path=self.dir_path, old_name=old_name, new_name=new_name)
 
 
 if __name__ == "__main__":
