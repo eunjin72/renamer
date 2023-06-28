@@ -10,7 +10,6 @@ class RenameView(QWidget):
 
     def __init__(self):
         super().__init__()
-        # self.model = RenameModel()
 
         self.row_counter = 0
         self.dir_path = None
@@ -72,8 +71,8 @@ class RenameView(QWidget):
         self.form_group_box.setLayout(self.layout)
 
 
-# if __name__ == '__main__':
-#     app = QApplication(sys.argv)
-#     rv = RenameView()
-#     sys.exit(app.exec_())
+if __name__ == '__main__':
+    app = QApplication(sys.argv)
+    rv = RenameView()
+    sys.exit(app.exec_())
 
