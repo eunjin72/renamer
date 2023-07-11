@@ -21,7 +21,7 @@ class RenameView(QWidget):
         layout_main = QHBoxLayout()
 
         self.line_path = QLineEdit("Path")
-        self.line_name = QLineEdit("Current File Name")
+        self.text_name = QTextEdit("Current File Name")
         self.btn_browse = QPushButton("Browse")
 
         self.btn_add = QPushButton("+")
@@ -32,7 +32,7 @@ class RenameView(QWidget):
         layout_left_in.addWidget(self.line_path)
         layout_left_in.addWidget(self.btn_browse)
         layout_left.addLayout(layout_left_in)
-        layout_left.addWidget(self.line_name)
+        layout_left.addWidget(self.text_name)
 
         layout_right.addWidget(self.form_group_box)
         layout_right_in.addWidget(self.btn_add)
