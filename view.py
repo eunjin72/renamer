@@ -71,7 +71,7 @@ class RenameView(QWidget):
         self.form_group_box.setLayout(self.layout)
 
     def btn_sub_event(self):
-        "remove QLineEdit"
+        "remove QLineEdit 구현 중"
         pass
 
 
